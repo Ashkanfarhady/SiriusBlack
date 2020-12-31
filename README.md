@@ -13,10 +13,18 @@ curl 127.0.0.1:8080/create/ -X POST --data '{"body": "A top secret message to Ja
 ```
 
 The above request will be respond with a uuid, for example : 
-678fbc6b-1780-4d24-83e2-209ef434a396
+```bash
+{"key":"99f85673-fdd3-4685-8c19-885aa31c2e5c"}
+```
 
 Example of getitng the secret :
 
 ```bash
-curl 127.0.0.1:8585/678fbc6b-1780-4d24-83e2-209ef434a396
+curl 127.0.0.1:8585/99f85673-fdd3-4685-8c19-885aa31c2e5c
+```
+
+And the response will be ( the TTL is now in seconds ): 
+
+```bash
+{"body":"A top secret message to James Bond","ttl":600}
 ```
